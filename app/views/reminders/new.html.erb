@@ -1,0 +1,17 @@
+<div data-turbo=false>
+    <%= form_for(@reminder) do |form| %>
+    <p><%= form.label("title") %></p>
+    <p><%= form.text_field("title") %></p>
+    <p><%= form.label("do_before") %></p>
+    <p><%= form.date_field("do_before") %></p>
+    <p><%= form.submit %></p>
+    <% end %>
+</div>
+<p>
+    <% if @reminder.errors.any? %>
+        <% @reminder.errors.messages.each do |field, errors| %>
+            <p>Field <%= field %> <%= errors.join %></p>
+        <% end %>
+    <% end %>
+</p>
+<p><%= link_to("Back", reminders_path) %></p>

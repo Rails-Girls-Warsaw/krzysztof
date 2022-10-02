@@ -1,0 +1,8 @@
+<p>Przypomnij o: <%= @reminder.title %></p>
+<p>Kiedy?: <%= @reminder.do_before %></p>
+<p>
+    Zrobione? 
+    <%= @reminder.completed ? 'Tak' : 'Nie' %>
+</p>
+
+<%= link_to "Back", reminders_path %>

@@ -1,0 +1,27 @@
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Do before</th>
+        <th>Completed?</th>
+        <th>Actions</td>
+    </tr>
+    <% @reminders.each do |reminder| %>
+        <tr>
+            <td>
+                <%= reminder.title %>
+            </td>
+            <td>
+                <%= reminder.do_before.to_date %>
+            </td>
+            <td>
+                <%= reminder.completed %>
+            </td>
+            <td>
+                <%= link_to 'Show', reminder_path(reminder.id) %>
+                <%= link_to 'Edit', edit_reminder_path(reminder.id) %>
+                <%= link_to 'Destroy', reminder, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </td>
+        </tr>
+    <% end %>
+</table>
+<%= link_to 'New', new_reminder_path %>
