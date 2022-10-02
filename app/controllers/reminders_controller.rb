@@ -1,6 +1,6 @@
 class RemindersController < ApplicationController
     def index
-        @reminders = Reminder.all
+        @reminders = Reminder.all.order(:do_before)
     end
 
     def show

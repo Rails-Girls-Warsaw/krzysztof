@@ -1,10 +1,14 @@
 <div data-turbo=false>
     <%= form_for(@reminder) do |form| %>
-    <p><%= form.label("title") %></p>
-    <p><%= form.text_field("title") %></p>
-    <p><%= form.label("do_before") %></p>
-    <p><%= form.date_field("do_before") %></p>
-    <p><%= form.submit %></p>
+        <div class="form-group">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <p><%= form.label :do_before %></p>
+            <p><%= form.date_field :do_before, class: "form-control" %></p>
+        </div>
+        <p><%= form.submit class: 'btn btn-primary' %></p>
     <% end %>
 </div>
 <p>
